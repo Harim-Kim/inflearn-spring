@@ -8,14 +8,20 @@ import hello.core.order.Order;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
 
-    OrderService orderService = new OrderServiceImpl();
-
+    OrderService orderService;
+    @BeforeEach
+    public void beforEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
     @Test
     void createOrder(){
         Long memberId = 1L;

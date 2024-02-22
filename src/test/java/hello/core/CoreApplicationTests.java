@@ -8,11 +8,7 @@ class CoreApplicationTests {
 
     @Test
     void contextLoads() {
-        OrderServiceTest orderTest = new OrderServiceTest();
-        MemberServiceTest memberTest = new MemberServiceTest();
-
-        memberTest.join();
-        orderTest.createOrder();
+        // 여기서 진행하면 스프링띄우느냐고 시간이 오래걸림.
     }
 
 }
