@@ -30,10 +30,6 @@ public class ApplicationContextExtendsFindTest {
         Assertions.assertInstanceOf( RateDiscountPolicy.class, rateDiscountPolicy);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
     @Test
     @DisplayName("특정 하위 타입으로 조회하면 됨 - 안 좋은 방법임")
