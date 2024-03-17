@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -12,5 +15,9 @@ import org.springframework.context.annotation.FilterType;
 // @Configureation 넣으면 알아서 위의 값이 또 읽어짐(AppConfig, TestConfig 남겨두고 사용하기 위한 설정임.)
 public class AutoAppConfig {
 
+    @Bean(name="memoryMemberRepository")
+    public MemberRepository memberRepository(){
+        return new MemoryMemberRepository();
+    }
 
 }
